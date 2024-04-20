@@ -3,7 +3,7 @@
 ### Como usar:
 - Cole a URL do texto na caixa de entrada fornecida e clique no botão "Obter da URL".
 
-- <strong>ATENÇÂO! Se a sua URL começar por "http", apague e coloque "https" (sem as aspas!)</strong>
+- <strong>ATENÇÃO! Se a sua URL começar por "http", apague e coloque "https" (sem as aspas!)</strong>
 
 - Nosso aplicativo cuidará do resto, arumando os acentos e apresentando-o em uma nova aba do navegador, pronto para visualização e download.
 
