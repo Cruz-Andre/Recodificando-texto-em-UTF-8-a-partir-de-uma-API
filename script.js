@@ -32,21 +32,32 @@ function displayText(texto_utf8) {
   newWindow.document.body.style.backgroundColor = '#282828';
   newWindow.document.body.style.color = 'white';
 
-  // Adicionar um botão para fazer o download do arquivo
-  const downloadButton = newWindow.document.createElement('button');
-  downloadButton.textContent = 'Baixar arquivo';
-  downloadButton.onclick = function () {
-    const blob = new Blob([texto_utf8], { type: 'text/plain;charset=utf-8' });
-    const fileName = 'resultado.txt';
-    const downloadLink = newWindow.document.createElement('a');
-    downloadLink.href = URL.createObjectURL(blob);
-    downloadLink.download = fileName;
-    newWindow.document.body.appendChild(downloadLink);
-    downloadLink.click();
-    URL.revokeObjectURL(downloadLink.href);
-    newWindow.document.body.removeChild(downloadLink);
-  };
-  newWindow.document.body.insertBefore(downloadButton, newWindow.document.body.firstChild);
+  // Função para criar botão de download
+  function createDownloadButton(extension) {
+    const button = newWindow.document.createElement('button');
+    button.textContent = `Baixar arquivo com a extensão .${extension}`;
+    button.onclick = function () {
+      const blob = new Blob([texto_utf8], { type: 'text/plain;charset=utf-8' });
+      const fileName = `resultado.${extension}`;
+      const downloadLink = newWindow.document.createElement('a');
+      downloadLink.href = URL.createObjectURL(blob);
+      downloadLink.download = fileName;
+      newWindow.document.body.appendChild(downloadLink);
+      downloadLink.click();
+      URL.revokeObjectURL(downloadLink.href);
+      newWindow.document.body.removeChild(downloadLink);
+    };
+    return button;
+  }
+
+  // Criar e adicionar botões de download para .txt e .srt
+  const downloadButtonTxt = createDownloadButton('txt');
+  const downloadButtonSrt = createDownloadButton('srt');
+
+  // Ajustar margens e adicionar botões à nova aba
+  newWindow.document.body.insertBefore(downloadButtonSrt, newWindow.document.body.firstChild);
+  downloadButtonSrt.style.marginLeft = '10px';
+  newWindow.document.body.insertBefore(downloadButtonTxt, newWindow.document.body.firstChild);
 }
 
 function displayError(errorMessage) {
