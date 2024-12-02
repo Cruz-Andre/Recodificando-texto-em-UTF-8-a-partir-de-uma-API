@@ -1,4 +1,4 @@
-## Para aqueles que frequentemente lidam com textos obtidos por APIs e enfrentam o desafio de acentos e caracteres especiais truncados. <br> <br> Nosso pequeno programa foi desenvolvido para resolver esse problema, garantindo que você possa acessar facilmente os textos em seu formato original UTF-8.
+## Para aqueles que frequentemente lidam com textos obtidos por endpoints que retornam um json e enfrentam o desafio de acentos e caracteres especiais truncados. <br> <br> Nosso pequeno programa foi desenvolvido para resolver esse problema, garantindo que você possa acessar facilmente os textos em seu formato original UTF-8.
   
 ### Como usar:
 - Cole a URL do texto na caixa de entrada fornecida e clique no botão "Obter da URL".
