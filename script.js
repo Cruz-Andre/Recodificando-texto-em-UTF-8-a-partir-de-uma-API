@@ -69,3 +69,6 @@ function clearError() {
   const errorMessages = document.getElementById('errorMessages');
   errorMessages.textContent = '';
 }
+
+const ano = document.getElementById('ano')
+ano.textContent = new Date().getFullYear()
